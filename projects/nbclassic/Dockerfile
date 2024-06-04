@@ -19,7 +19,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 RUN rustup install nightly
 RUN rustup default nightly
-RUN python3 -m pip install --upgrade pip cython notebook
+RUN python3 -m pip install --upgrade cython notebook 'pyinstaller==6.7.0'
 RUN git clone --depth=1 https://github.com/python-jsonschema/jsonschema-specifications jsonschema_specifications
 RUN git clone https://github.com/jupyter/nbclassic nbclassic
 COPY *.sh *py $SRC/
