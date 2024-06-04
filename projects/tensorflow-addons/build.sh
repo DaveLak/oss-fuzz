@@ -23,5 +23,5 @@ bazel-bin/build_pip_pkg artifacts
 python3 -m pip install artifacts/tensorflow_addons-*.whl
 
 for fuzzer in $(find $SRC -name 'fuzz_*.py'); do
-  compile_python_fuzzer $fuzzer --add-data '/usr/local/lib/python3.8/site-packages/tensorflow_addons/custom_ops/text/:tensorflow_addons/custom_ops/text/'
+  compile_python_fuzzer $fuzzer --add-data '/usr/local/lib/python3.10/site-packages/tensorflow_addons/custom_ops/text/:tensorflow_addons/custom_ops/text/'
 done
