@@ -17,7 +17,7 @@
 FROM gcr.io/oss-fuzz-base/base-builder-python
 
 RUN apt-get install sqlite3
-RUN pip3 install --upgrade pip
+RUN python3 -m pip install colorlog cron-descriptor 'pyinstaller==6.7.0'
 
 RUN git clone https://github.com/apache/airflow
 ENV AIRFLOW_HOME=$SRC/airflow/

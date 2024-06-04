@@ -16,10 +16,8 @@
 ################################################################################
 
 # Build and install project (using current CFLAGS, CXXFLAGS).
-pip3 install --upgrade pip
-pip3 install colorlog
 pip3 install .
 
 # Build fuzzers in $OUT.
 cd $SRC
-compile_python_fuzzer dag_fuzz.py --add-data airflow:airflow --add-data airflow/airflow:airflow --add-data /usr/local/lib/python3.8/site-packages/cron_descriptor:cron_descriptor
+compile_python_fuzzer dag_fuzz.py --add-data airflow:airflow --add-data airflow/airflow:airflow --add-data /usr/local/lib/python3.10/site-packages/cron_descriptor:cron_descriptor
