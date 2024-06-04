@@ -31,7 +31,7 @@ if [ $SANITIZER == "introspector" ]; then
     sed -i 's/site-packages/dist-packages/g' /fuzz-introspector/frontends/python/prepare_fuzz_imports.py
 fi
 
-PYTHON_CONFIG_STR=$(python3.9-config --cflags --ldflags)
+PYTHON_CONFIG_STR=$(python3-config --cflags --ldflags)
 export LDSHARED="${CC} ${PYTHON_CONFIG_STR} -nostartfiles -shared"
 
 python3 setup.py install

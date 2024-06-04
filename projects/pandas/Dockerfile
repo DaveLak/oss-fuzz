@@ -16,12 +16,7 @@
 
 FROM gcr.io/oss-fuzz-base/base-builder-python
 RUN apt-get update && apt-get install -y make autoconf automake libtool libffi-dev
-# Ensure we work from right python version
-RUN apt-get install -y python3.9 python3.9-dev && \
-    ln --force -s /usr/bin/python3.9 /usr/local/bin/python3 && \
-    apt-get install -y python3-pip && \
-    python3 -m pip install cython "atheris>=2.1.1" "pyinstaller==5.0.1" "coverage==6.3.2"
-RUN python3 -m pip install --upgrade pip Cython numpy versioneer
+RUN python3 -m pip install --upgrade Cython numpy versioneer 'pyinstaller==6.7.0'
 RUN git clone --depth 1 https://github.com/pandas-dev/pandas pandas && \
     cd pandas && \
     python3 -m pip install -r requirements-dev.txt
