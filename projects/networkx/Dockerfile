@@ -14,12 +14,7 @@
 # limitations under the License.
 FROM gcr.io/oss-fuzz-base/base-builder-python
 
-# Ensure we work from right python version
-RUN apt-get install -y python3.9 python3.9-dev && \
-    ln --force -s /usr/bin/python3.9 /usr/local/bin/python3 && \
-    apt-get install -y python3-pip && \
-    python3 -m pip install cython "atheris>=2.1.1" "pyinstaller==5.0.1" "coverage==6.3.2"
-
+RUN python3 -m pip install cython 'pyinstaller==6.7.0'
 RUN git clone https://github.com/networkx/networkx networkx
 RUN git clone --depth=1 https://github.com/prefuse/Prefuse prefuse
 COPY *.sh *py $SRC/
