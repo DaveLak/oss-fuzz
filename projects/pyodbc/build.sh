@@ -18,7 +18,7 @@
 # Compile the fake odbc driver
 clang -Wno-unused-result -Wsign-compare -Wunreachable-code \
       -fwrapv  -Wno-write-strings -fPIC \
-      -shared -I/usr/local/include/python3.8 -I$PWD/src  \
+      -shared -I/usr/local/include/python3.10 -I$PWD/src  \
       -o $OUT/fuzzodbc.so $SRC/fake_odbc_driver.c
 
 python3 setup.py install
