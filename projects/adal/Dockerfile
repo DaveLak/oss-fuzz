@@ -16,6 +16,13 @@
 
 FROM gcr.io/oss-fuzz-base/base-builder-python
 
+# Install OpenSSL
+RUN apt-get update && apt-get install -y openssl
+
+# Install Python dependencies with pinned versions
+RUN python3 -m pip install 'setuptools~=69.0' 'pyinstaller==5.1' 'pyinstaller-hooks-contrib==2022.8' 'cryptography==3.4.8'
+
+
 RUN git clone https://github.com/AzureAD/azure-activedirectory-library-for-python adsl
 WORKDIR adsl
 
