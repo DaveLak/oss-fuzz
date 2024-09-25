@@ -1,0 +1,11 @@
+homepage: "https://github.com/fastavro/fastavro"
+language: python
+primary_contact: ""
+auto_ccs:
+  - ""
+main_repo: "https://github.com/fastavro/fastavr://github.com/fastavro/fastavro"
+fuzzing_engines:
+  - libfuzzer
+sanitizers:
+  - address
+  - undefined
